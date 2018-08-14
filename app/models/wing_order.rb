@@ -19,11 +19,11 @@ class WingOrder < ApplicationRecord
   validates :customer_name, presence: true
   validates :city, presence: true
   validates :state,
-    presence: true,
-    inclusion: { in: STATES.map { |state| state[1] } }
+  presence: true,
+  inclusion: { in: STATES.map { |state| state[1] } }
   validates :quantity,
-    presence: true,
-    numericality: { only_integer: true },
-    inclusion: { in: QUANTITIES.map { |quantity| quantity[0] } }
+  presence: true,
+  numericality: { only_integer: true },
+  inclusion: { in: QUANTITIES.map { |quantity| quantity[0] } }
   validates :ranch_dressing, inclusion: { in: [true, false] }
 end
